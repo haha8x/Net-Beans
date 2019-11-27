@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="addNewStudent" type="tns:addNewStudent" />
+
+<xs:element name="addNewStudentResponse" type="tns:addNewStudentResponse" />
+
+<xs:element name="findStudentByRollNo" type="tns:findStudentByRollNo" />
+
+<xs:element name="findStudentByRollNoResponse" type="tns:findStudentByRollNoResponse" />
+
+<xs:element name="getAllStudent" type="tns:getAllStudent" />
+
+<xs:element name="getAllStudentResponse" type="tns:getAllStudentResponse" />
+
+<xs:element name="isExist" type="tns:isExist" />
+
+<xs:element name="isExistResponse" type="tns:isExistResponse" />
+
+<xs:element name="updateStudent" type="tns:updateStudent" />
+
+<xs:element name="updateStudentResponse" type="tns:updateStudentResponse" />
+
+<xs:complexType name="updateStudent">
+<xs:sequence>
+<xs:element name="student" type="tns:student" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="student">
+<xs:sequence>
+<xs:element name="className" type="xs:string" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="rollNo" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateStudentResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findStudentByRollNo">
+<xs:sequence>
+<xs:element name="rollNo" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findStudentByRollNoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:student" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addNewStudent">
+<xs:sequence>
+<xs:element name="student" type="tns:student" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addNewStudentResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isExist">
+<xs:sequence>
+<xs:element name="arg0" type="tns:student" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isExistResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllStudent">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getAllStudentResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:student" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
